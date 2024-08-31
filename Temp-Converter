@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<ctype.h>
+
+int main(){
+
+    char unit;
+    float temp;
+
+    printf("\nIs your temperature in (C) or (F)?: ");
+    scanf("%c", &unit);
+
+    if(unit == 'C' || unit == 'c'){
+            printf("\nEnter the temperature you want to convert:");
+            scanf("%f", &temp);
+            temp = (temp * 9 / 5) + 32;
+            printf("\nThat is %.1f degrees F", temp);
+    }
+    else if(unit == 'F' || unit == 'f'){
+            printf("\nEnter the temperature you want to convert:");
+            scanf("%f", &temp);
+            temp = ((temp - 32) * 5) / 9;
+            printf("\nThat is %.1f degrees C", temp);
+
+    }
+    else{
+        printf("\n%c is not a unit, dumbass!", unit);
+    }
+
+    return 0;
+
+
+}
